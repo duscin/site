@@ -1,0 +1,59 @@
+{
+    //引擎主服务端口
+    "port" : 8090,
+    //全局统一的日志级别
+    "loglevel" : "INFO",
+    "database" : {
+        "instances": [
+            {
+                "name": "default",
+                "type": "sqlite",
+                "database": "${engine.home}/db/default.db"
+            },
+            {
+                "name": "mysql",
+                "type": "mysql",
+                "host": "localhost",
+                "port": 3306,
+                "database": "testdb",
+                "parameters": "?useUnicode=true&characterEncoding=utf-8",
+                "username": "root",
+                "password": "root"
+            }
+        ],
+        "pool": {
+            "initialSize": 2,
+            "maxActive": 20,
+            "maxWait": 60000,
+            "timeBetweenEvictionRunsMillis": 60000,
+            "minEvictableIdleTimeMillis": 300000,
+            "validationQuery": "SELECT 'x'",
+            "testWhileIdle": true,
+            "testOnBorrow": false,
+            "testOnReturn": false,
+            "poolPreparedStatements": true,
+            "maxPoolPreparedStatementPerConnectionSize": 20
+        }
+    },
+    "dynamic" : {
+        "port": 11216,
+        "minQueriedDataCountToCache": 3000
+    },
+    "rest" : {
+        "port": 11215
+    },
+    "tile" : {
+        "port": 11214,
+        "services": [
+            {
+                "name": "custom-1",
+                "vendor": "custom",
+                "format": "png",
+                "type": "exploded",
+                "version": "default",
+                "folder": "${engine.home}/mapdata/mapabc-2012-07",
+                "size": 256
+            }
+        ]
+    }
+}

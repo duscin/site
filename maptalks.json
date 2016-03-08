@@ -8,6 +8,7 @@
             {
                 "name": "default",
                 "type": "sqlite",
+                //${engine.home}表示引擎主目录
                 "database": "${engine.home}/db/default.db"
             },
             {
@@ -44,14 +45,15 @@
     },
     "tile" : {
         "port": 11214,
-        "services": [
+        "instances": [
             {
                 "name": "custom-1",
                 "vendor": "custom",
                 "format": "png",
                 "type": "exploded",
                 "version": "default",
-                "folder": "${engine.home}/mapdata/mapabc-2012-07",
+                //支持相对路径
+                "folder": "./mapdata/mapabc-2012-07",
                 "size": 256
             }
         ]

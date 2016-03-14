@@ -1,14 +1,19 @@
 {
-    //引擎主服务端口
-    "port" : 8090,
-    //全局统一的日志级别
-    "loglevel" : "INFO",
+    "server" : {
+        //Port of engine server
+        "port" : 8090,
+        //全局统一的日志级别
+        "loglevel" : "INFO",
+        "resource" : "${engine.home}/resources",
+    },
     "database" : {
         "instances": [
             {
                 "name": "default",
                 "type": "sqlite",
-                "database": "${engine.home}/db/default.db"
+                "database": "${engine.home}/db/default.db",
+                //默认的pool配置, 引用自database.default.pool
+                "pool" : "default"
             },
             {
                 "name": "mysql",
@@ -18,24 +23,32 @@
                 "database": "testdb",
                 "parameters": "?useUnicode=true&characterEncoding=utf-8",
                 "username": "root",
-                "password": "root"
+                "password": "root",
+                "pool" : {
+                    "initialSize": 5,
+                    "maxActive": 50
+                }
             }
         ],
-        "pool": {
-            "initialSize": 2,
-            "maxActive": 20,
-            "maxWait": 60000,
-            "timeBetweenEvictionRunsMillis": 60000,
-            "minEvictableIdleTimeMillis": 300000,
-            "validationQuery": "SELECT 'x'",
-            "testWhileIdle": true,
-            "testOnBorrow": false,
-            "testOnReturn": false,
-            "poolPreparedStatements": true,
-            "maxPoolPreparedStatementPerConnectionSize": 20
+        "default": {
+            "pool": {
+                "initialSize": 2,
+                "maxActive": 20,
+                "maxWait": 60000,
+                "timeBetweenEvictionRunsMillis": 60000,
+                "minEvictableIdleTimeMillis": 300000,
+                "validationQuery": "SELECT 'x'",
+                "testWhileIdle": true,
+                "testOnBorrow": false,
+                "testOnReturn": false,
+                "poolPreparedStatements": true,
+                "maxPoolPreparedStatementPerConnectionSize": 20
+            }
         }
     },
     "dynamic" : {
+         //override global loglevel
+        "loglevel" : "INFO",
         "port": 11216,
         "minQueriedDataCountToCache": 3000
     },
@@ -43,6 +56,7 @@
         "port": 11215
     },
     "tile" : {
+        "loglevel" : "ERROR",
         "port": 11214,
         "services": [
             {

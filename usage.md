@@ -2,7 +2,7 @@
 ```bash
 npm install -g maptalks
 cd /home/foo/maptalks
-maptalks install
+maptalks init
 #install后的maptalks目录
 /home/foo/maptalks
     |- resources

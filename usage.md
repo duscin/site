@@ -29,7 +29,7 @@ maptalks --config maptalks.json
     "server" : {
         "port" : 8090,
         "loglevel" : "INFO",
-        "resource" : "./resource",
+        "root" : "./www",
     },
     "database" : {
         "instances": [

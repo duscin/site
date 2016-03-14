@@ -17,7 +17,7 @@ maptalks init
     |- snap
        |-shots
     |- tiles
-        |- arcgis-nanjing
+        |- sample
     |- maptalks.json
 #运行
 maptalks --config maptalks.json

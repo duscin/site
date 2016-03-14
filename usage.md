@@ -56,10 +56,11 @@ maptalks --config maptalks.json
         }
     },
     "rest" : {
+        "loglevel" : "INFO",
         "port": 11215
     },
     "tile" : {
-        "loglevel" : "ERROR",
+        "loglevel" : "INFO",
         "port": 11214,
         "instances": [
             {

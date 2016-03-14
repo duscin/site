@@ -29,20 +29,18 @@
                 }
             }
         ],
-        "default": {
-            "pool": {
-                "initialSize": 2,
-                "maxActive": 20,
-                "maxWait": 60000,
-                "timeBetweenEvictionRunsMillis": 60000,
-                "minEvictableIdleTimeMillis": 300000,
-                "validationQuery": "SELECT 'x'",
-                "testWhileIdle": true,
-                "testOnBorrow": false,
-                "testOnReturn": false,
-                "poolPreparedStatements": true,
-                "maxPoolPreparedStatementPerConnectionSize": 20
-            }
+        "pool": {
+            "initialSize": 2,
+            "maxActive": 20,
+            "maxWait": 60000,
+            "timeBetweenEvictionRunsMillis": 60000,
+            "minEvictableIdleTimeMillis": 300000,
+            "validationQuery": "SELECT 'x'",
+            "testWhileIdle": true,
+            "testOnBorrow": false,
+            "testOnReturn": false,
+            "poolPreparedStatements": true,
+            "maxPoolPreparedStatementPerConnectionSize": 20
         }
     },
     "dynamic" : {

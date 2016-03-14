@@ -5,7 +5,7 @@ cd /home/foo/maptalks
 maptalks install
 #install后的maptalks目录
 /home/foo/maptalks
-    |- resource
+    |- resources
         |-maptalks.js
         |-maptalks.css
         |-images+

@@ -28,8 +28,10 @@ maptalks --config maptalks.json
 {
     "server" : {
         "port" : 8090,
-        "loglevel" : "INFO",
-        "root" : "./www",
+        "loglevel": "INFO",
+        //日志有可能需要配置到别的目录, 方便日志分析软件统一管理
+        "logpath" : "./logs", 
+        "docroot" : "./www"
     },
     "database" : {
         "instances": [

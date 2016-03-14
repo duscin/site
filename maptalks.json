@@ -12,9 +12,7 @@
                 "name": "default",
                 "type": "sqlite",
                 //${engine.home}表示引擎主目录
-                "database": "${engine.home}/db/default.db",
-                //默认的pool配置, 引用自database.default.pool
-                "pool" : "default"
+                "database": "${engine.home}/db/default.db"
             },
             {
                 "name": "mysql",

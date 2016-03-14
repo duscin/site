@@ -4,15 +4,15 @@
         "port" : 8090,
         //全局统一的日志级别
         "loglevel" : "INFO",
-        "resource" : "${engine.home}/resources",
+        "resource" : "./resources",
     },
     "database" : {
         "instances": [
             {
                 "name": "default",
                 "type": "sqlite",
-                //${engine.home}表示引擎主目录
-                "database": "${engine.home}/db/default.db"
+                //表示引擎主目录
+                "database": "./db/default.db"
             },
             {
                 "name": "mysql",

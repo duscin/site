@@ -5,7 +5,7 @@ cd /home/foo/maptalks
 maptalks init
 # init后的目录结构
 /home/foo/maptalks
-    |- resources
+    |- www
         |-maptalks.js
         |-maptalks.css
         |-images+

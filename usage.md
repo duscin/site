@@ -29,7 +29,7 @@ maptalks --config maptalks.json
     "server" : {
         "port" : 8090,
         "loglevel" : "INFO",
-        "resource" : "./resources",
+        "resource" : "./resource",
     },
     "database" : {
         "instances": [
@@ -66,7 +66,6 @@ maptalks --config maptalks.json
                 "format": "png",
                 "type": "exploded",
                 "version": "default",
-                //支持相对路径
                 "folder": "./tiles/sample",
                 "size": 256
             }

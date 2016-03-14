@@ -3,7 +3,7 @@
 npm install -g maptalks
 cd /home/foo/maptalks
 maptalks init
-#install后的maptalks目录
+# init后的目录结构
 /home/foo/maptalks
     |- resources
         |-maptalks.js
